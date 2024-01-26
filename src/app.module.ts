@@ -5,6 +5,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 import { join } from 'path';
 import { graphQLExceptionFormat } from './common';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { graphQLExceptionFormat } from './common';
         formatError: graphQLExceptionFormat,
       }),
     }),
+    UsersModule,
   ],
 })
 export class AppModule {}
